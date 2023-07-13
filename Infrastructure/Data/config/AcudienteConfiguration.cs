@@ -15,10 +15,10 @@ public class AcudienteConfiguration : IEntityTypeConfiguration<Acudiente>
         (p => p.Attendant_telephone).IsRequired();
 
         builder.Property
-        (p => p.Attendant_telephone).IsRequired().HasMaxLength(80);
+        (p => p.Attendant_telephone).IsRequired().HasMaxLength(50);
 
         builder.Property
-        (p => p.Attendant_fullname).IsRequired().HasMaxLength(80);
+        (p => p.Attendant_fullname).IsRequired().HasMaxLength(50);
     }
 }
 

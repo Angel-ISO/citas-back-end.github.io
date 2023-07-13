@@ -25,8 +25,15 @@ public class CitasContext : DbContext
           modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
           modelBuilder.ApplyConfiguration(new AcudienteConfiguration());
           modelBuilder.ApplyConfiguration(new GeneroConfiguration());
+          modelBuilder.ApplyConfiguration(new TipoDocumentoConfiguration());
+          modelBuilder.ApplyConfiguration(new CitaConfiguration());
+         modelBuilder.ApplyConfiguration(new EstadoCitaConfiguration());
+          modelBuilder.ApplyConfiguration(new MedicoConfiguration());
+          modelBuilder.ApplyConfiguration(new EspecialidadConfiguration());
+          modelBuilder.ApplyConfiguration(new ConsultorioConfiguration());
 
 
+          
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }

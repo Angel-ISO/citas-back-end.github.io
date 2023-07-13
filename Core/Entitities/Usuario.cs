@@ -10,6 +10,8 @@ public class Usuario
     public string ?Usu_first_last_name { get; set; }
     public string ?Usu_second_last_name { get; set; }
     public string ?Usu_telephone { get; set; }
+    public string ?Usu_history { get; set; }
+    public Cita ?Cita { get; set; }
     public string ?Usu_address { get; set; }
     public string ?Usu_email { get; set; }
     public int Usu_type_document { get; set; }
