@@ -1,6 +1,7 @@
 using System.Reflection;
 using Core.Entitities;
 using Microsoft.EntityFrameworkCore;
+using Infrastructure.Data.config;
 namespace Infrastructure.Data;
 public class CitasContext : DbContext
 {
@@ -21,6 +22,11 @@ public class CitasContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+          modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+          modelBuilder.ApplyConfiguration(new AcudienteConfiguration());
+          modelBuilder.ApplyConfiguration(new GeneroConfiguration());
+
+
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }

@@ -8,7 +8,6 @@ public class Acudiente
     public string ?Attendant_telephone { get; set; }
     public string ?Attendant_address { get; set; }
     public string ?Attendant_fullname { get; set; }
-      public Usuario ? Usuario { get; set;}
-
+    public ICollection<Usuario> ?Usuarios { get; set; }
 }
 

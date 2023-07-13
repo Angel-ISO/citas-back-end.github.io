@@ -7,7 +7,7 @@ public class AcudienteConfiguration : IEntityTypeConfiguration<Acudiente>
 {
     public void Configure(EntityTypeBuilder<Acudiente> builder)
     {
-        builder.ToTable("Acudientes");
+        builder.ToTable("acudiente");
         builder.Property
         (p => p.Attendant_cod).IsRequired();
 
@@ -19,12 +19,6 @@ public class AcudienteConfiguration : IEntityTypeConfiguration<Acudiente>
 
         builder.Property
         (p => p.Attendant_fullname).IsRequired().HasMaxLength(80);
-
-        ModelBuilder.Entity<Usuario>()
-        .HasOne<Acudiente>(s => s.Acudiente)
-        .WithMany(g => g.Usuarios)
-        .HasForeignKey(s => s.Usu_attendant);
-        
     }
 }
 
