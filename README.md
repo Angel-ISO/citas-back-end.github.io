@@ -2,15 +2,11 @@
 iniciar migraciones
 
 ```
-dotnet ef
-migrations add InitialCreate --project ./Infrastructure/ --startup-project ./API/ --output-dir
-./Data/Migrations
+dotnet ef migrations add InitialCreate --project ./Infrastructure/ --startup-project ./API/ --output-dir ./Data/Migrations
 ```
 
 
-actualizar base de datos
-
+publicacion en base de datos y actualizaciones posteriores
 ```
-dotnet ef database
-update --project ./Infrastructure/ --startup-project ./API/
+dotnet ef database update --project ./Infrastructure/ --startup-project ./API/
 ```
