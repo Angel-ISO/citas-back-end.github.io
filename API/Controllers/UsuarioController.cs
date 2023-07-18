@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers;
 public class UsuarioController : BaseApiController
 {
+
     private readonly CitasContext _context;
     public UsuarioController(CitasContext context)
     {
@@ -16,10 +17,17 @@ public class UsuarioController : BaseApiController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<IEnumerable<Usuario>>> Get()
     {
-        var user = await _context.Usuarios.ToListAsync();
-        return Ok(user);
+        var person = await _context.Usuarios.ToListAsync();
+        return Ok(person);
     }
-
+     [HttpGet("id")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+      public async Task<IActionResult> Get(int id)
+    {
+        var byiduser = await _context.Usuarios.FindAsync(id);
+        return Ok(byiduser);
+    }
 }
 
    
